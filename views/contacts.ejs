@@ -1,0 +1,8 @@
+<%- include('./partials/header.ejs') %>
+<h1>Contacts page</h1>
+<div>
+    <% contacts.forEach(({name, link}) => { %>
+        <a href="<%= link %>"><%= name %></a>
+    <% });%>
+</div>
+<%- include('./partials/footer.ejs') %>

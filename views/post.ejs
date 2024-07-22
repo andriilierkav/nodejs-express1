@@ -1,0 +1,11 @@
+<%- include('./partials/header.ejs') %>
+<h1 class="post-title"><%= post.title %></h1>
+<a href="/deletePost/<%= post.id %>" title="delete post">Delete</a> - - -
+<a href="/editPost/<%= post.id %>" title="edit post">Edit</a>
+<div post-id="<%= post.id %>">
+    <p><%- post.content %></p>
+    <hr>
+    <p>Author: <%= post.author %></p>
+    <p>Date: <%= (new Date(post.date)).toLocaleDateString() %></p>
+</div>
+<%- include('./partials/footer.ejs') %>

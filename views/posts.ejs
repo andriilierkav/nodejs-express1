@@ -1,0 +1,11 @@
+<%- include('./partials/header.ejs') %>
+<h1>Posts</h1>
+
+<% posts.forEach(({id, title, author, date}) => { %>
+    <div>
+        <a href="/deletePost/<%= id %>" title="delete post">X</a> - - -
+        <span><a href="/post/<%= id %>"><%= title %></a>  by author: <%= author %> - Date: <%= (new Date(date)).toLocaleDateString() %></span>
+    </div>
+<% });%>
+
+<%- include('./partials/footer.ejs') %>
