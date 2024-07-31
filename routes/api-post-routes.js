@@ -11,10 +11,10 @@ const {
 
 router.get('/api/posts', getPosts);
 
-router.get('/api/post/:id', authMiddleware, getPost);
-router.delete('/api/post/:id', deletePost);
-router.post('/api/post', addPost);
-router.put('/api/post/:id', editPost);
+router.get('/api/post/:id', getPost);
+router.delete('/api/post/:id', authMiddleware, deletePost);
+router.post('/api/post', authMiddleware, addPost);
+router.put('/api/post/:id', authMiddleware, editPost);
 
 
 module.exports = router;

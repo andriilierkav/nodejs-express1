@@ -57,7 +57,7 @@ class ApiAuthController {
             if(user) {
                 const validPassword = bcrypt.compareSync(password, user.password);
                 if(validPassword) {
-                    const token = await this.generateAccessToken(username, password);
+                    const token = await this.generateAccessToken(username, user.roles);
                     res.status(200).json({'status': 'success', token: token});
                 }
             }
